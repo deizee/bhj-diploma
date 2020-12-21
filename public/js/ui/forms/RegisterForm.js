@@ -3,7 +3,7 @@
  * регистрации
  * Наследуется от AsyncForm
  * */
-class RegisterForm {
+class RegisterForm extends AsyncForm {
   /**
    * Производит регистрацию с помощью User.register
    * После успешной регистрации устанавливает
