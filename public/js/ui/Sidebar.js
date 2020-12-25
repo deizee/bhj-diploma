@@ -37,12 +37,14 @@ class Sidebar {
     const sidebarMenu = document.querySelector('.sidebar-menu');
     sidebarMenu.addEventListener('click', (e) => {
       e.preventDefault();
-      if (e.target.textContent == 'Вход') {
+      if (e.target.innerText == 'Вход') {
         const modal = App.getModal('login');
         modal.open();
-      } else if (e.target.textContent == 'Регистрация') {
+      } else if (e.target.innerText == 'Регистрация') {
         const modal = App.getModal('register');
         modal.open();
+      } else if (e.target.innerText == 'Выйти') {
+        User.logout(User.current(), () => App.setState( 'init' ));
       }
     });
   }

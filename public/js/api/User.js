@@ -12,8 +12,7 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(data) {
-    const id = data.id;
-    const name = data.name;
+    const { id, name } = data;
     localStorage.setItem('user', JSON.stringify({ id, name }));
   }
 
@@ -38,14 +37,12 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch( data, callback = f => f ) {
-    const request = createRequest({ 
+    return createRequest({ 
       data, 
       method: 'GET',
       url: `${this.URL}/current`,
       callback,
     });
-
-    return request;
   }
 
   /**
@@ -62,6 +59,7 @@ class User {
       callback: (response) => {
         if (!response.success) {
           alert(response.error || response.error.email);
+          return;
         }
         if (response && response.user) {
           this.setCurrent(response.user);
@@ -96,13 +94,16 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout( data, callback = f => f ) {
-    const request = createRequest({ 
+    return createRequest({ 
       data, 
       method: 'POST',
       url: `${this.URL}/logout`,
-      callback,
+      callback: (response) => {
+        if (response) {
+          this.unsetCurrent();
+        }
+        callback();
+      },
     });
-
-    return request;
   }
 }
