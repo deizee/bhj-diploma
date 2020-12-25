@@ -11,8 +11,10 @@ class User {
    * Устанавливает текущего пользователя в
    * локальном хранилище.
    * */
-  static setCurrent(user) {
-    localStorage.setItem('user', user);
+  static setCurrent(data) {
+    const id = data.id;
+    const name = data.name;
+    localStorage.setItem('user', JSON.stringify({ id, name }));
   }
 
   /**
@@ -28,7 +30,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    return localStorage.getItem('user');
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   /**
@@ -53,14 +55,20 @@ class User {
    * User.setCurrent.
    * */
   static login( data, callback = f => f ) {
-    const request = createRequest({ 
+    return createRequest({ 
       data, 
       method: 'POST',
       url: `${this.URL}/login`,
-      callback,
+      callback: (response) => {
+        if (!response.success) {
+          alert(response.error || response.error.email);
+        }
+        if (response && response.user) {
+          this.setCurrent(response.user);
+        }
+        callback();
+      },
     });
-
-    return request;
   }
 
   /**
@@ -70,14 +78,17 @@ class User {
    * User.setCurrent.
    * */
   static register( data, callback = f => f ) {
-    const request = createRequest({ 
+    return createRequest({ 
       data, 
       method: 'POST',
       url: `${this.URL}/register`,
-      callback,
+      callback: (err, response) => {
+        if (response && response.user) {
+          this.setCurrent(response.user);
+        }
+        callback.call(this, err, response);
+      },
     });
-
-    return request;
   }
 
   /**

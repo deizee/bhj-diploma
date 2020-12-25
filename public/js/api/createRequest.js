@@ -16,9 +16,10 @@ const createRequest = (options = {}) => {
     xhr.addEventListener('readystatechange', function () {
       if (xhr.readyState == xhr.DONE) {
         const response = xhr.responseText;
-        options.callback(null, response);
+        options.callback(JSON.parse(response));
       };
     });
+
     //xhr.responseType = options.responseType || 'json';
     //xhr.withCredentials = true;
 
@@ -31,7 +32,7 @@ const createRequest = (options = {}) => {
     }
     
   } catch (error) {
-    options.callback(error, null);
+    options.callback(error);
   }
 
   return xhr;

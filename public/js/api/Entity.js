@@ -12,13 +12,12 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list( data, callback = f => f ) {
-    const request = createRequest( { 
+    return createRequest( { 
       method: 'GET',
       url: this.URL,
       data, 
       callback,
     } );
-    return request;
   }
 
   /**
