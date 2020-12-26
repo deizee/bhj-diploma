@@ -16,7 +16,10 @@ class Entity {
       method: 'GET',
       url: this.URL,
       data, 
-      callback,
+      callback: (response) => {
+        if (!response.success) return;
+        callback(response);
+      },
     } );
   }
 
@@ -27,13 +30,12 @@ class Entity {
    * */
   static create(data, callback = f => f) {
     const modifiedData = {...data, _method: 'PUT'};
-    const request = createRequest({
+    return createRequest({
       method: 'POST',
       url: this.URL,
-      modifiedData,
+      data: modifiedData,
       callback,
     });
-    return request;
   }
 
   /**
@@ -41,13 +43,12 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static get( id = '', data, callback = f => f ) {
-    const request = createRequest( { 
+    return createRequest( { 
       method: 'GET',
       url: `${this.URL}/${id}`,
       data, 
       callback,
     } );
-    return request;
   }
 
   /**
@@ -56,13 +57,12 @@ class Entity {
    * */
   static remove( id = '', data, callback = f => f ) {
     const modifiedData = { ...data, _method: 'DELETE', id };
-    const request = createRequest({
+    return createRequest({
       method: 'POST',
       url: this.URL,
-      modifiedData,
+      data: modifiedData,
       callback,
     });
-    return request;
   }
 }
 

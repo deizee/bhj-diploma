@@ -41,7 +41,12 @@ class User {
       data, 
       method: 'GET',
       url: `${this.URL}/current`,
-      callback,
+      callback: (response) => {
+        if (response) {
+          this.current();
+        }
+        callback(response);
+      },
     });
   }
 
@@ -64,7 +69,7 @@ class User {
         if (response && response.user) {
           this.setCurrent(response.user);
         }
-        callback();
+        callback(response);
       },
     });
   }
@@ -81,7 +86,6 @@ class User {
       method: 'POST',
       url: `${this.URL}/register`,
       callback: (response) => {
-        console.log(response)
         if (!response.success) {
           alert(response.error.email);
           return;
@@ -89,7 +93,7 @@ class User {
         if (response && response.user) {
           this.setCurrent(response.user);
         }
-        callback();
+        callback(response);
       },
     });
   }
@@ -107,7 +111,7 @@ class User {
         if (response) {
           this.unsetCurrent();
         }
-        callback();
+        callback(response);
       },
     });
   }

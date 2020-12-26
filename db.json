@@ -26,6 +26,13 @@
       "email": "e@e",
       "password": "e",
       "id": "dhrm7z9uokj58shfy",
+      "isAuthorized": true
+    },
+    {
+      "name": "g",
+      "email": "g@gg",
+      "password": "g",
+      "id": "dhrm7z9vskj58w7y4",
       "isAuthorized": false
     }
   ],
@@ -44,6 +51,26 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "dhrm7z9uokj58shfy",
+      "id": "dhrm7zbm4kj5cg79a"
+    },
+    {
+      "name": "test",
+      "user_id": "dhrm7z9uokj58shfy",
+      "id": "dhrm7z3nskj5elsin"
+    },
+    {
+      "name": "Ekaterina",
+      "user_id": "dhrm7z9uokj58shfy",
+      "id": "dhrm7z8vokj5enub8"
+    },
+    {
+      "name": "1",
+      "user_id": "dhrm7z9uokj58shfy",
+      "id": "dhrm7zcnckj5hpf20"
     }
   ],
   "transactions": [

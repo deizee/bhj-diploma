@@ -24,7 +24,9 @@ class Modal {
    * */
   registerEvents() {
     const closeElements = this.element.querySelectorAll('button[data-dismiss="modal"]');
-    closeElements.forEach(el => el.addEventListener('click', this.onClose));
+    closeElements.forEach(el => el.addEventListener('click', () => {
+      this.onClose();
+    }));
   }
 
   /**
@@ -32,9 +34,7 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose( e ) {
-    const parent = e.target.closest('.modal');
-    const modal = App.getModal(parent.dataset.modalId);
-    modal.close();
+    this.close();
   }
   /**
    * Удаляет обработчики событий

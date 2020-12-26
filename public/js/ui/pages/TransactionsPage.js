@@ -11,7 +11,10 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
+    if (!element) throw new Error('Переданный в качестве параметра элемент не существует');
+    this.element = element;
 
+    this.registerEvents();
   }
 
   /**
