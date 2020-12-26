@@ -80,11 +80,16 @@ class User {
       data, 
       method: 'POST',
       url: `${this.URL}/register`,
-      callback: (err, response) => {
+      callback: (response) => {
+        console.log(response)
+        if (!response.success) {
+          alert(response.error.email);
+          return;
+        }
         if (response && response.user) {
           this.setCurrent(response.user);
         }
-        callback.call(this, err, response);
+        callback();
       },
     });
   }

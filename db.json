@@ -5,7 +5,28 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1",
-      "isAuthorized": true
+      "isAuthorized": false
+    },
+    {
+      "name": "test",
+      "email": "test@test.com",
+      "password": "test",
+      "id": "dhrm7za58kj58fgka",
+      "isAuthorized": false
+    },
+    {
+      "name": "g",
+      "email": "g@g",
+      "password": "ggg",
+      "id": "dhrm7z498kj58gb6b",
+      "isAuthorized": false
+    },
+    {
+      "name": "Ekaterina",
+      "email": "e@e",
+      "password": "e",
+      "id": "dhrm7z9uokj58shfy",
+      "isAuthorized": false
     }
   ],
   "accounts": [
