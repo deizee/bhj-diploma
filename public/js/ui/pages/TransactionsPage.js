@@ -35,7 +35,7 @@ class TransactionsPage {
    * */
   registerEvents() {
     this.element.addEventListener('click', (e) => {
-      if (e.target.classList.contains('remove-account')) {
+      if (e.target.classList.contains('remove-account') || e.target.parentElement.classList.contains('remove-account')) {
         this.removeAccount();
       }
       
@@ -104,6 +104,7 @@ class TransactionsPage {
     this.renderTransactions([]);
     const contentTitle = this.element.querySelector('.content-title');
     contentTitle.textContent = 'Название счёта';
+    this.lastOptions = {};
   }
 
   /**
@@ -162,6 +163,7 @@ class TransactionsPage {
   renderTransactions( data ) {
     const transactionsHTML = data.map(el => this.getTransactionHTML(el)).join(' ');
     const contentElement = this.element.querySelector('.content');
-    contentElement.innerHTML = transactionsHTML;
+    contentElement.innerHTML = '';
+    contentElement.insertAdjacentHTML('afterbegin', transactionsHTML);
   }
 }
