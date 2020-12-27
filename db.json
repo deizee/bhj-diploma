@@ -58,19 +58,9 @@
       "id": "dhrm7zbm4kj5cg79a"
     },
     {
-      "name": "test",
-      "user_id": "dhrm7z9uokj58shfy",
-      "id": "dhrm7z3nskj5elsin"
-    },
-    {
       "name": "Ekaterina",
       "user_id": "dhrm7z9uokj58shfy",
       "id": "dhrm7z8vokj5enub8"
-    },
-    {
-      "name": "1",
-      "user_id": "dhrm7z9uokj58shfy",
-      "id": "dhrm7zcnckj5hpf20"
     }
   ],
   "transactions": [
@@ -208,6 +198,116 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "dhrm7zfkwkj6njs3s",
+      "type": "INCOME",
+      "name": "g",
+      "sum": 1000,
+      "created_at": "2020-12-27T04:48:17.415Z"
+    },
+    {
+      "id": "dhrm7zfmwkj6nkm9m",
+      "type": "INCOME",
+      "name": "g",
+      "sum": 1000,
+      "created_at": "2020-12-27T04:48:56.505Z"
+    },
+    {
+      "id": "dhrm7z38ckj6qztie",
+      "type": "INCOME",
+      "name": "Зарплата",
+      "sum": 30000,
+      "account_id": "dhrm7zbm4kj5cg79a",
+      "created_at": "2020-12-27T06:24:44.581Z"
+    },
+    {
+      "id": "dhrm7z70ckj6r0naq",
+      "type": "EXPENSE",
+      "name": "Покупочки",
+      "sum": 30000,
+      "account_id": "dhrm7zbm4kj5cg79a",
+      "created_at": "2020-12-27T06:25:23.185Z"
+    },
+    {
+      "id": "dhrm7z4wwkj6r8485",
+      "type": "INCOME",
+      "name": "Зарплата",
+      "sum": 30000,
+      "account_id": "dhrm7z8vokj5enub8",
+      "created_at": "2020-12-27T06:31:11.716Z"
+    },
+    {
+      "id": "dhrm7z6k0kj6r8jgn",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000000,
+      "account_id": "dhrm7zcnckj5hpf20",
+      "created_at": "2020-12-27T06:31:31.462Z"
+    },
+    {
+      "id": "dhrm7zc2skj6rjr4m",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7z4o0kj6rjgbb",
+      "created_at": "2020-12-27T06:40:14.613Z"
+    },
+    {
+      "id": "dhrm7z9sckj6roxqu",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7z1d8kj6rorww",
+      "created_at": "2020-12-27T06:44:16.470Z"
+    },
+    {
+      "id": "dhrm7zfo0kj6rweri",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7z73kkj6rw18w",
+      "created_at": "2020-12-27T06:50:05.117Z"
+    },
+    {
+      "id": "dhrm7z838kj6rz3vx",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 1000,
+      "account_id": "dhrm7zcdgkj6ryl7c",
+      "created_at": "2020-12-27T06:52:10.988Z"
+    },
+    {
+      "id": "dhrm7zfeckj6vk0iy",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7zfeckj6vjt3h",
+      "created_at": "2020-12-27T08:32:25.258Z"
+    },
+    {
+      "id": "dhrm7zdugkj6wfpa5",
+      "type": "INCOME",
+      "name": "Зарплата",
+      "sum": 25000,
+      "account_id": "dhrm7zbm4kj5cg79a",
+      "created_at": "2020-12-27T08:57:03.676Z"
+    },
+    {
+      "id": "dhrm7zajckj6wg291",
+      "type": "INCOME",
+      "name": "tea",
+      "sum": 100,
+      "account_id": "dhrm7zfeckj6vjt3h",
+      "created_at": "2020-12-27T08:57:20.484Z"
+    },
+    {
+      "id": "dhrm7z87ckj6wgpkh",
+      "type": "EXPENSE",
+      "name": "tea",
+      "sum": 100,
+      "account_id": "dhrm7zbm4kj5cg79a",
+      "created_at": "2020-12-27T08:57:50.704Z"
     }
   ]
 }

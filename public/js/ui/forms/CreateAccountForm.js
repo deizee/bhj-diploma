@@ -12,6 +12,7 @@ class CreateAccountForm extends AsyncForm {
    * */
   onSubmit( options ) {
     Account.create(options.data, () => App.update());
+    this.element.reset();
     App.modals.createAccount.close();
   }
 }

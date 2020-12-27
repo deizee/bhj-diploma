@@ -7,7 +7,7 @@ const createRequest = (options = {}) => {
 
   const xhr = new XMLHttpRequest();
   let url = options.url;
-  if (options.method == 'GET') {
+  if (options.method == 'GET' && Object.keys(options.data).length != 0) {
     url = `${options.url}?${getUrlStringFromData(options.data)}`;
   }
 

@@ -18,7 +18,7 @@ class Entity {
       data, 
       callback: (response) => {
         if (!response.success) return;
-        callback(response);
+        callback(response.data);
       },
     } );
   }
@@ -34,7 +34,10 @@ class Entity {
       method: 'POST',
       url: this.URL,
       data: modifiedData,
-      callback,
+      callback: (response) => {
+        if (!response.success) return;
+        callback(response);
+      },
     });
   }
 
@@ -47,7 +50,10 @@ class Entity {
       method: 'GET',
       url: `${this.URL}/${id}`,
       data, 
-      callback,
+      callback: (response) => {
+        if (!response.success) return;
+        callback(response.data.name);
+      },
     } );
   }
 
@@ -61,7 +67,10 @@ class Entity {
       method: 'POST',
       url: this.URL,
       data: modifiedData,
-      callback,
+      callback: (response) => {
+        if (!response.success) return;
+        callback(response);
+      },
     });
   }
 }

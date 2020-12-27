@@ -11,7 +11,10 @@ class TransactionsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
+    if (!element) throw new Error('Переданный в качестве параметра элемент не существует');
+    this.element = element;
 
+    this.registerEvents();
   }
   /**
    * Регистрирует обработчики нажатия на
@@ -20,6 +23,14 @@ class TransactionsWidget {
    * экземпляра окна
    * */
   registerEvents() {
-
+    this.element.addEventListener('click', (e) => {
+      if (e.target.classList.contains('create-income-button')) {
+        App.modals.newIncome.open();
+      };
+      
+      if (e.target.classList.contains('create-expense-button')) {
+        App.modals.newExpense.open();
+      };
+    });
   }
 }
