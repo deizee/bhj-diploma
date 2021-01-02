@@ -43,7 +43,7 @@ class App {
   static initPages() {
     this.pages = {
       transactions : new TransactionsPage( this.content )
-    }
+    };
   }
 
   /**
@@ -80,7 +80,7 @@ class App {
       createAccount: new CreateAccountForm(document.querySelector('#new-account-form')),
       createIncome: new CreateTransactionForm(document.querySelector('#new-income-form')),
       createExpense: new CreateTransactionForm(document.querySelector('#new-expense-form'))
-    }
+    };
   }
 
   /**
@@ -146,16 +146,16 @@ class App {
   static setState( state ) {
     if (this.state) {
       this.element.classList.remove( `app_${this.state}` );
-    }
+    };
     this.element.classList.add( `app_${state}` );
     this.state = state;
 
     if ( state === 'user-logged' ) {
       this.update();
-    }
+    };
     if ( state === 'init' ) {
       this.clear();
-    }
+    };
   }
 
   /**

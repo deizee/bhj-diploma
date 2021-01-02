@@ -13,7 +13,9 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor( element ) {
-    if (!element) throw new Error('Переданный в качестве параметра элемент не существует');
+    if (!element) {
+      throw new Error('Переданный в качестве параметра элемент не существует');
+    };
     this.element = element;
     this.registerEvents();
   }
@@ -53,7 +55,6 @@ class AsyncForm {
    * данные, полученные из метода getData()
    * */
   submit() {
-    const data = this.getData();
-    this.onSubmit({data});
+    this.onSubmit(this.getData());
   }
 }

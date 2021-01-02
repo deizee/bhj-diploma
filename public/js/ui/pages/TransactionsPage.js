@@ -11,10 +11,11 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
-    if (!element) throw new Error('Переданный в качестве параметра элемент не существует');
+    if (!element) {
+      throw new Error('Переданный в качестве параметра элемент не существует');
+    };
     this.element = element;
     this.lastOptions = {};
-
     this.registerEvents();
   }
 
@@ -35,16 +36,16 @@ class TransactionsPage {
    * */
   registerEvents() {
     this.element.addEventListener('click', (e) => {
-      if (e.target.classList.contains('remove-account') || e.target.parentElement.classList.contains('remove-account')) {
+      if (e.target.closest('.remove-account')) {
         this.removeAccount();
-      }
+      };
       
-      if (e.target.classList.contains('transaction__remove') || e.target.parentElement.classList.contains('transaction__remove')) {
+      if (e.target.closest('.transaction__remove')) {
         let transactionId = '';
         e.target.classList.contains('transaction__remove')? transactionId = e.target.dataset.id : transactionId = e.target.parentElement.dataset.id;
         this.removeTransaction(transactionId);
-      }
-    })
+      };
+    });
   }
 
   /**
@@ -56,14 +57,16 @@ class TransactionsPage {
    * для обновления приложения
    * */
   removeAccount() {
-    if (Object.keys(this.lastOptions).length === 0) return;
+    if (Object.keys(this.lastOptions).length === 0) {
+      return;
+    };
 
     const isConfirm = confirm('Вы действительно хотите удалить счёт?');
     if (isConfirm) {
       Account.remove(this.lastOptions.account_id, {}, () => App.update());
       this.lastOptions = {};
       this.clear();
-    }
+    };
   }
 
   /**
@@ -75,7 +78,7 @@ class TransactionsPage {
     const isConfirm = confirm('Вы действительно хотите удалить эту транзакцию?');
     if (isConfirm) {
       Transaction.remove(id, {}, () => App.update());
-    }
+    };
   }
 
   /**
@@ -122,6 +125,7 @@ class TransactionsPage {
   formatDate( date ) {
     const DMY = new Date(date).toLocaleString('ru', {day: "numeric", month: "long", year: "numeric"});
     const HM = new Date(date).toLocaleString('ru', {hour: "numeric", minute: "numeric"});
+
     return `${DMY} в ${HM}`;
   }
 

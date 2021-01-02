@@ -13,9 +13,10 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
-    if (!element) throw new Error('Переданный в качестве параметра элемент не существует');
+    if (!element) {
+      throw new Error('Переданный в качестве параметра элемент не существует');
+    };
     this.element = element;
-
     this.registerEvents();
   }
 
@@ -115,5 +116,5 @@ class AccountsWidget {
       const accountHTML = this.getAccountHTML(el);
       this.element.insertAdjacentHTML('beforeend', accountHTML);
     });
-  }
+  };
 }

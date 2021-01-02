@@ -4,7 +4,6 @@
  * Имеет свойство URL, равное '/user'.
  * */
 class User {
-
   static URL = '/user';
 
   /**
@@ -44,7 +43,7 @@ class User {
       callback: (response) => {
         if (response) {
           this.current();
-        }
+        };
         callback(response);
       },
     });
@@ -65,10 +64,10 @@ class User {
         if (!response.success) {
           alert(response.error || response.error.email);
           return;
-        }
+        };
         if (response && response.user) {
           this.setCurrent(response.user);
-        }
+        };
         callback(response);
       },
     });
@@ -89,10 +88,10 @@ class User {
         if (!response.success) {
           alert(response.error.email);
           return;
-        }
+        };
         if (response && response.user) {
           this.setCurrent(response.user);
-        }
+        };
         callback(response);
       },
     });
@@ -110,7 +109,7 @@ class User {
       callback: (response) => {
         if (response) {
           this.unsetCurrent();
-        }
+        };
         callback(response);
       },
     });

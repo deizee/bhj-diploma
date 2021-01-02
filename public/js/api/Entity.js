@@ -3,7 +3,6 @@
  * Имеет свойство URL, равно пустой строке.
  * */
 class Entity {
-  
   static URL = '';
 
   /**
@@ -17,7 +16,9 @@ class Entity {
       url: this.URL,
       data, 
       callback: (response) => {
-        if (!response.success) return;
+        if (!response.success) {
+          return;
+        };
         callback(response.data);
       },
     } );
@@ -35,7 +36,9 @@ class Entity {
       url: this.URL,
       data: modifiedData,
       callback: (response) => {
-        if (!response.success) return;
+        if (!response.success) {
+          return;
+        };
         callback(response);
       },
     });
@@ -51,7 +54,9 @@ class Entity {
       url: `${this.URL}/${id}`,
       data, 
       callback: (response) => {
-        if (!response.success) return;
+        if (!response.success) {
+          return;
+        };
         callback(response.data.name);
       },
     } );
@@ -74,4 +79,3 @@ class Entity {
     });
   }
 }
-

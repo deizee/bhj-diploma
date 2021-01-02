@@ -34,7 +34,7 @@ class CreateTransactionForm extends AsyncForm {
    * */
   onSubmit( options ) {
     const selectValue = this.element.querySelector('select').value;
-    Transaction.create({...options.data, account_id: selectValue}, () => {
+    Transaction.create({...options, account_id: selectValue}, () => {
       this.element.reset();
       App.getModal(this.element.closest('.modal').dataset.modalId).close();
       App.update();

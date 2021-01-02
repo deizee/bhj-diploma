@@ -111,15 +111,6 @@
     },
     {
       "account_id": "2",
-      "created_at": "2019-09-25 15:03:02",
-      "id": "17",
-      "name": "Овощи",
-      "sum": 300,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
       "created_at": "2019-09-26 14:47:02",
       "id": "6",
       "name": "Мясо",
@@ -169,15 +160,6 @@
       "id": "12",
       "name": "Прибыль с магазина",
       "sum": 300000,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "3",
-      "created_at": "2018-01-15 13:27:02",
-      "id": "13",
-      "name": "Подарок сизого",
-      "sum": 20000,
       "type": "income",
       "user_id": "1"
     },
@@ -308,6 +290,38 @@
       "sum": 100,
       "account_id": "dhrm7zbm4kj5cg79a",
       "created_at": "2020-12-27T08:57:50.704Z"
+    },
+    {
+      "id": "dhrm7z1lckj6xibor",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7zpckj6xi47s",
+      "created_at": "2020-12-27T09:27:05.642Z"
+    },
+    {
+      "id": "dhrm7z80gkjfc32x0",
+      "type": "EXPENSE",
+      "name": "Подарки",
+      "sum": 5000,
+      "account_id": "dhrm7z8vokj5enub8",
+      "created_at": "2021-01-02T06:37:18.083Z"
+    },
+    {
+      "id": "dhrm7zd6okjfcl698",
+      "type": "INCOME",
+      "name": "test",
+      "sum": 10000,
+      "account_id": "dhrm7z8dkkjfcl0b4",
+      "created_at": "2021-01-02T06:51:22.219Z"
+    },
+    {
+      "id": "dhrm7z8lokjfcq57l",
+      "type": "EXPENSE",
+      "name": "tea",
+      "sum": 100,
+      "account_id": "dhrm7z8dkkjfcl0b4",
+      "created_at": "2021-01-02T06:55:14.144Z"
     }
   ]
 }

@@ -23,7 +23,7 @@ class Sidebar {
       e.preventDefault();
       document.body.classList.toggle('sidebar-open');
       document.body.classList.toggle('sidebar-collapse');
-    })
+    });
   }
 
   /**
@@ -38,14 +38,12 @@ class Sidebar {
     sidebarMenu.addEventListener('click', (e) => {
       e.preventDefault();
       if (e.target.innerText == 'Вход') {
-        const modal = App.getModal('login');
-        modal.open();
+        App.getModal('login').open();
       } else if (e.target.innerText == 'Регистрация') {
-        const modal = App.getModal('register');
-        modal.open();
+        App.getModal('register').open();
       } else if (e.target.innerText == 'Выйти') {
         User.logout(User.current(), () => App.setState( 'init' ));
-      }
+      };
     });
-  }
+  };
 }
